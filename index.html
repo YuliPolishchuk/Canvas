@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <canvas width="800" height="1000" id="canvas"></canvas> 
+  <script> 
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+
+  var grd = ctx.createLinearGradient(0,0,0,720);
+   grd.addColorStop(0, '#00ABEB');
+   grd.addColorStop(0.5, '#fff');
+
+   ctx.fillStyle = grd;
+   ctx.fillRect(0,0,400,720);
+
+ var grd1 = ctx.createLinearGradient(0,200,0,500);
+   grd1.addColorStop(0.5, '#26C000');
+   grd1.addColorStop(1, '#fff');
+
+   ctx.fillStyle = grd1;
+   ctx.fillRect(0,360,400,200);
+
+    ctx.beginPath();
+    ctx.moveTo(75,40);
+    ctx.bezierCurveTo(75,37,70,25,50,25);
+    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+    ctx.bezierCurveTo(20,80,40,102,75,120);
+    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.fillStyle = "red";
+    ctx.fill();
+  
+    ctx.beginPath();
+    ctx.arc(300,60,32,Math.PI/7,-Math.PI/7,false);
+    ctx.lineTo(300,60);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+
+    ctx.fillStyle = "grey"; 
+    ctx.fillRect(120,170,180,190); 
+    ctx.fillStyle = "white";
+    ctx.fillRect(140,190,60,80); 
+    ctx.fillStyle = "black";
+    ctx.strokeRect(135,185,70,90);
+
+    ctx.beginPath();
+    ctx.moveTo(210,110);
+    ctx.lineTo(320,170);
+    ctx.lineTo(100,170);
+    ctx.fillStyle = "#424242";
+    ctx.fill();
+
+}
+draw();
+  </script> 
+</body>
+</html>
